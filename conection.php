@@ -4,10 +4,10 @@ $username = "root";
 $password = "";
 $dbname = "restaurantsystem";
 //creacion de la conexion
-$connection = mysqli_connect($servername, $username, $password, $dbname);
+$conection = mysqli_connect($servername, $username, $password, $dbname);
 
 //checar la conexion
-if(!$connection){
+if(!$conection){
     die("Connection failed " . mysqli_connect_error());
 }echo "Connected succesfully";
 ?>
