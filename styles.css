@@ -197,3 +197,74 @@ body {
   font-size: 9px;
   color: #7a8791;
 }
+/* Ajustes exclusivos de la página de registro */
+.pagina-registro .principal-content {
+  box-sizing: border-box;
+  padding-top: 80px;
+  padding-bottom: 64px;
+}
+
+.pagina-registro .login-box {
+  max-width: 420px;
+}
+
+.pagina-registro .eyebrow {
+  text-transform: none;
+}
+
+.pagina-registro .login-box h1 {
+  font-size: 28px;
+}
+
+.pagina-registro .subtitulo {
+  margin-bottom: 16px;
+}
+
+/* Estilo del selector de puesto */
+.pagina-registro .login-box select {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border: 1px solid #d9d9d9;
+  border-radius: 3px;
+  background-color: #fff;
+  color: #65737c;
+  font-family: inherit;
+  font-size: 13px;
+}
+
+/* Conserva espacio para el botón del ojo,
+   incluso cuando se muestra la contraseña */
+.pagina-registro .campo-password input {
+  padding-right: 48px;
+}
+
+.pagina-registro .ojo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  right: 4px;
+}
+
+.pagina-registro .login-box input:focus,
+.pagina-registro .login-box select:focus {
+  outline: 2px solid #8a5a44;
+  outline-offset: 2px;
+}
+
+.aviso-aprobacion {
+  margin: 18px 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #65737c;
+}
+
+.pagina-registro .btn-login {
+  box-sizing: border-box;
+}
+
+.volver-login {
+  text-align: center;
+}

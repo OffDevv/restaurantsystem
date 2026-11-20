@@ -49,7 +49,7 @@
             </button>
         </form>
 
-        <p class="registro">¿Aún no tienes cuenta? <a href="#">Crear cuenta</a></p>
+        <p class="registro">¿Aún no tienes cuenta? <a href="register.php">Crear cuenta</a></p>
     </div>
 </div>
 
