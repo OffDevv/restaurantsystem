@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de colaborador</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="scriptsjs/registro.js" defer></script>
 </head>
 
 <body class="pagina-registro">
     <div class="fondo-decorativo" aria-hidden="true">
         <div class="circulo-blanco"></div>
     </div>
-
     <img
         class="logo"
         src="images/logo.png"
@@ -36,10 +36,7 @@
                     de cuenta de colaborador.
                 </p>
 
-                <form
-                    id="form-registro"
-                    action="guardar_registro.php"
-                    method="POST"
+                <form id="form-registro" action="guardar_registro.php" method="POST"
                 >
                     <label for="nombre">Nombre del colaborador</label>
                     <input
@@ -51,7 +48,6 @@
                         autocomplete="name"
                         required
                     >
-
                     <label for="num_colaborador">
                         Número de colaborador
                     </label>
@@ -68,9 +64,7 @@
 
                     <label for="puesto">Elige un cargo</label>
                     <select id="puesto" name="puesto" required>
-                        <option value="" disabled selected>
-                            Selecciona tu puesto
-                        </option>
+                        <option value="" disabled selected> Selecciona tu puesto </option>
                         <option value="supervisor">Supervisor</option>
                         <option value="gerente">Gerente</option>
                         <option value="capitan">Capitán</option>
@@ -95,15 +89,7 @@
                             aria-controls="password"
                             aria-label="Mostrar contraseña"
                         >
-                            <svg
-                                width="18"
-                                height="18"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                aria-hidden="true"
-                            >
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
                                 <circle cx="12" cy="12" r="3"/>
                             </svg>
@@ -164,47 +150,5 @@
     <footer class="pie">
         © Valentín Imperial Riviera Maya
     </footer>
-
-    <script>
-        // Mostrar u ocultar cada contraseña.
-        document.querySelectorAll('[data-password]').forEach(boton => {
-            const campo = document.getElementById(
-                boton.dataset.password
-            );
-
-            const descripcion = campo.id === 'password'
-                ? 'contraseña'
-                : 'confirmación de contraseña';
-
-            boton.addEventListener('click', () => {
-                const mostrar = campo.type === 'password';
-
-                campo.type = mostrar ? 'text' : 'password';
-
-                boton.setAttribute(
-                    'aria-label',
-                    `${mostrar ? 'Ocultar' : 'Mostrar'} ${descripcion}`
-                );
-            });
-        });
-
-        // Comprobar que ambas contraseñas coincidan.
-        const password = document.getElementById('password');
-        const confirmacion = document.getElementById(
-            'confirmar_password'
-        );
-
-        function validarContrasenas() {
-            const diferentes =
-                confirmacion.value !== password.value;
-
-            confirmacion.setCustomValidity(
-                diferentes ? 'Las contraseñas no coinciden.' : ''
-            );
-        }
-
-        password.addEventListener('input', validarContrasenas);
-        confirmacion.addEventListener('input', validarContrasenas);
-    </script>
 </body>
 </html>

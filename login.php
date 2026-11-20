@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login colaborador</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="scriptsjs/logueo.js" defer></script>
 </head>
 <body>
     <div class="fondo-decorativo" aria-hidden="true">
@@ -57,19 +58,6 @@
 
     </main>
     <footer class="pie">© Valentin Imperial Riviera Maya</footer>
-    
-    <script>
-    const togglePassword = document.getElementById('togglePassword');
-    const password = document.getElementById('password');
-    togglePassword.addEventListener('click', () => {
-    const mostrar = password.type === 'password';
-    password.type = mostrar ? 'text' : 'password';
-    togglePassword.setAttribute(
-        'aria-label',
-        mostrar ? 'Ocultar contraseña' : 'Mostrar contraseña'
-    );
-});
-</script>
 </body>
 </html>
 <?php
