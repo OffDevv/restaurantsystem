@@ -69,7 +69,7 @@ unset($_SESSION["mensaje_registro"]);
 
                 <form
                     id="form-registro"
-                    action="guardar_registro.php"
+                    action="procesos_php/guardar_registro.php"
                     method="POST"
                 >
 
