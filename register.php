@@ -56,7 +56,7 @@
                         Número de colaborador
                     </label>
                     <input
-                        type="text"
+                        type="number"
                         id="num_colaborador"
                         name="num_colaborador"
                         placeholder="12345678"
