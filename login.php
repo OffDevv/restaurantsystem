@@ -4,11 +4,7 @@ session_start();
 $error = "";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $numero = filter_var(
-        $_POST["num_colaborador"] ?? "",
-        FILTER_VALIDATE_INT,
-        ["options" => ["min_range" => 1]]
-    );
+    $numero = filter_var($_POST["num_colaborador"] ?? "", FILTER_VALIDATE_INT, ["options" => ["min_range" => 1]]);
 
     $password = $_POST["password"] ?? "";
 
@@ -45,16 +41,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 $error = "Número de colaborador o contraseña incorrectos.";
             } elseif ((int) $usuario["id_status_colab"] !== 3) {
                 $error = "Tu cuenta está pendiente de aprobación o inactiva.";
-            } elseif ((int) $usuario["id_tipo_usuario"] !== 1) {
-                $error = "Tu cuenta no tiene acceso al panel de administrador.";
-            } else {
-                session_regenerate_id(true);
+            }else {
+    session_regenerate_id(true);
 
-                $_SESSION["id_colaborador"] = (int) $usuario["id"];
+    $_SESSION["id_colaborador"] = (int) $usuario["id"];
 
-                header("Location: admin.php");
-                exit;
-            }
+    $tipo = (int) $usuario["id_tipo_usuario"];
+
+    if ($tipo === 1 || $tipo === 2 || $tipo === 3) {
+        header("Location: admin.php");
+    } else {
+        header("Location: view_colaborador.php");
+    }
+
+    exit;
+}
 
             mysqli_close($conection);
         } catch (mysqli_sql_exception $e) {
@@ -181,7 +182,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                     <button type="submit" class="btn-login">
                         Iniciar sesión
-                        <span aria-hidden="true">→</span>
                     </button>
                 </form>
 

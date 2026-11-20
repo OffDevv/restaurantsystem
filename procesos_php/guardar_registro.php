@@ -6,13 +6,13 @@ function volverAlRegistro(string $mensaje): void
 {
     $_SESSION["mensaje_registro"] = $mensaje;
 
-    header("Location: register.php", true, 303);
+    header("Location: ../register.php", true, 303);
     exit;
 }
 
 // Este archivo únicamente recibe envíos del formulario.
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-    header("Location: register.php");
+    header("Location: ../register.php");
     exit;
 }
 
@@ -121,7 +121,7 @@ if ($password !== $confirmacion) {
 }
 
 try {
-    require __DIR__ . "/conection.php";
+    require __DIR__ . "/../conection.php";
 
     $hash = password_hash($password, PASSWORD_BCRYPT);
 

@@ -23,7 +23,7 @@ try {
     $consulta = mysqli_prepare(
         $conection,
         'SELECT id, nombre FROM colaborador
-         WHERE id = ? AND id_tipo_usuario = 1 AND id_status_colab = 3'
+         WHERE id = ? AND id_tipo_usuario IN (1,2,3) AND id_status_colab = 3'
     );
     mysqli_stmt_bind_param($consulta, 'i', $idSesion);
     mysqli_stmt_execute($consulta);
